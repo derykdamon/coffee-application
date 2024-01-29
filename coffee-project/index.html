@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coffee Project</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/coffees.css">
+
+</head>
+<body>
+<header>
+
+    <!--Background-->
+    <div class="background">
+        <img src="img/cup-coffee-table-front-street-with-city-lights-background.jpg" alt="">
+    </div>
+
+    <!--Navigation Bar-->
+    <div class="nav">
+        <div>
+            <a href="#"><img src="img/1667812423coffee-shop-logo-concept.svg" alt=""></a>
+        </div>
+        <div>
+            <h1>CJ Coffees!</h1>
+        </div>
+        <div class="links">
+            <a href="#">Shop</a>
+            <a href="#">About</a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <!--Wrapper-->
+    <section class="wrapper">
+
+        <!--Coffee Render-->
+        <div class="coffee-list">
+            <h2>Coffee List</h2>
+            <div class="coffee-display">
+            </div>
+        </div>
+
+        <!--Select Coffee Section-->
+        <div class="select-create">
+            <div class="selection">
+                <h2>Select Coffee</h2>
+                <form id="select-form" class="d-none">
+                    <div>
+                        <label for="roast-selection">Roast</label>
+                        <select class="form-select" id="roast-selection">
+                            <option>All</option>
+                            <option>Light</option>
+                            <option>Medium</option>
+                            <option>Dark</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="name-selection">Coffee Name</label>
+                        <input type="text" name="coffeeName" id="name-selection" class="form-control">
+                    </div>
+                    <div>
+                        <label for="sort"> Sort By</label>
+                        <select id="sort" class="form-select">
+                            <option value="none">None</option>
+                            <option value="name">Name</option>
+                            <option value="id">Id</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+
+            <hr>
+
+            <!--Add Coffee Section-->
+            <div class="create">
+                <h2 class="text-center">Add a Coffee</h2>
+                <form id="create-form" class="d-none">
+                    <div>
+                        <label for="add-roast">Roast</label>
+                        <select id="add-roast">
+                            <option class="option">Light</option>
+                            <option>Medium</option>
+                            <option>Dark</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="add-name">Coffee Name</label>
+                        <input type="text" id="add-name">
+                    </div>
+                    <div class="d-grid ">
+                        <button type="submit" id="add-submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- JavaScript file -->
+<script src="js/main.js"></script>
+</body>
+</html>
+

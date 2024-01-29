@@ -1,0 +1,290 @@
+/*Global Reset*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Root Variables*/
+:root {
+    --c-bg-primary: #36160DFF;
+    --c-bg-alpha: rgba(54, 22, 13, 0.8);
+    --c-color-accent: #009C92FF;
+}
+
+/*Image Reset*/
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+body {
+    font-family: 'Dancing Script', cursive;
+}
+
+header {
+    position: relative;
+    height: 4rem;
+}
+
+.wrapper {
+    max-width: 80dvw;
+    margin: 0 auto;
+}
+
+/*Navigation Bar*/
+.nav {
+    --_nav-height: 4rem;
+    --_links-font-size: 1.2rem;
+
+    color: var(--c-color-accent);
+    background-color: var(--c-bg-primary);
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+
+    height: var(--_nav-height);
+    padding: 0 1rem;
+    margin: 0;
+    overflow-y: hidden;
+
+    & div {
+
+        &:nth-child(1) {
+            width: var(--_nav-height);
+        }
+
+        &:nth-child(2) {
+            margin-left: 1em;
+
+            & h1 {
+                font-size: calc((var(--_nav-height) / 3) * 1.5);
+            }
+        }
+    }
+
+    .links {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+
+        & a {
+            font-size: var(--_links-font-size);
+            padding: calc((var(--_nav-height) - var(--_links-font-size)) / 2) 1em;
+            display: inline-block;
+            text-decoration: none;
+            color: var(--c-color-accent);
+
+            &:hover {
+                background-color: red;
+            }
+        }
+    }
+}
+
+/*Background*/
+.background {
+    background: #58e5c4;
+    position: fixed;
+    height: 100dvh;
+    width: 100%;
+    z-index: -1;
+
+    & img {
+        transform: rotatey(180deg);
+        object-position: center;
+        min-height: 100%;
+    }
+}
+
+/*Main Section*/
+section {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    text-align: center;
+    margin: 1em 0;
+    padding: 1em 0;
+
+    /*Coffee List Area*/
+
+    .coffee-list {
+        flex-grow: 1;
+
+        & h2 {
+            backdrop-filter: blur(3px);
+            color: var(--c-color-accent);
+            font-size: 2.5rem;
+            width: max-content;
+            margin: 0 auto;
+            border-radius: 1rem;
+        }
+    }
+
+    /*Main area coffees are rendered*/
+
+    .coffee-display {
+        margin: 0 auto;
+        padding: .5em;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: start;
+        align-content: flex-start;
+        justify-content: center;
+
+        /*Coffee*/
+
+        .coffee {
+            min-width: 150px;
+            width: 20%;
+            flex-grow: 1;
+            margin: .5em;
+            padding: .5em;
+            border-radius: .5rem;
+            overflow: hidden;
+
+
+            color: var(--c-color-accent);
+            background: var(--c-bg-alpha);
+            box-shadow: rgb(0, 156, 146) 5px 5px 10px 0;
+            backdrop-filter: blur(3px);
+
+            &:hover {
+                box-shadow: #ffffff 5px 5px 20px 0;
+            }
+
+            & h3 {
+                font-size: 1.5rem;
+                margin: 0;
+            }
+
+            & p {
+                margin: 0;
+            }
+        }
+    }
+
+    /*Search and create coffee sections*/
+
+    .select-create {
+        color: var(--c-color-accent);
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        height: max-content;
+    }
+
+    .selection, .create {
+        min-width: 270px;
+        padding: .5em;
+        position: relative;
+        max-width: min-content;
+
+        & form {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+
+            & div {
+                margin: .4em 0;
+                display: flex;
+                flex-flow: column;
+                flex-grow: 1;
+                width: max-content;
+
+                &:nth-child(3) {
+                    width: 100%;
+                }
+            }
+        }
+
+        & h2 {
+            backdrop-filter: blur(3px);
+            border-radius: 1rem;
+            font-size: 2rem;
+            white-space: nowrap;
+        }
+
+        & label {
+            backdrop-filter: blur(3px);
+            font-size: 1.5rem;
+            text-wrap: none;
+            margin: .2em;
+        }
+
+        & select, & input {
+            background-color: var(--c-bg-primary);
+            color: var(--c-color-accent);
+            border-radius: .5rem;
+            flex-grow: 1;
+            min-height: 1.5rem;
+            margin: .2em;
+            border: none;
+            box-shadow: var(--c-color-accent) 3px 3px 5px 0;
+        }
+
+        & input {
+            padding: 0 .5em;
+        }
+
+        & button {
+            color: var(--c-color-accent);
+            background-color: var(--c-bg-alpha);
+            padding: .5em;
+            border-radius: .5rem;
+            border: none;
+            box-shadow: var(--c-color-accent) 3px 3px 5px 0;
+
+            &:hover {
+                background-color: #58e5c4;
+                color: var(--c-bg-primary);
+            }
+        }
+
+    }
+
+    & hr {
+        border: solid 1px var(--c-color-accent);
+        border-radius: 1em;
+    }
+
+    @media screen and (max-width: 1000px) {
+        flex-direction: column;
+        .select-create {
+            order: -1;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+
+        .selection, .create {
+            width: 100%;
+            max-width: 100%;
+
+            & form {
+                align-items: end;
+
+                & div {
+                    align-content: baseline;
+
+                    &:nth-child(3) {
+                        width: max-content;
+                    }
+                }
+            }
+        }
+
+
+        & button {
+            margin: auto .5em;
+        }
+    }
+}
